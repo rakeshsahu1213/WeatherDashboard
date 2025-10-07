@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title>Weather Dasboard</title>
+   <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+   <video id="bgVideo" autoplay muted loop playsinline>         <!-- bg video -->
+      <source id="bgSource" src="intro.mp4" type="video/mp4">
+   </video>
+   <div class="overlay"></div>
+
+   <div class="wrap">
+      <div style="width:100%;max-width:1100px;">
+         <!-- center search -->
+         <div class="search-row" aria-hidden="false">
+            <div class="search-box" role="search" aria-label="Search city">
+               <input id="cityInput" placeholder="Search city (e.g., Hyderabad,IN)"
+                  aria-label="City name with optional country code">
+               <button id="searchBtn" class="search-btn" title="Search">
+                  <!-- magnifier svg -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                     <path
+                        d="M10 4a6 6 0 104.472 10.009l4.759 4.76 1.414-1.414-4.76-4.759A6 6 0 0010 4zm0 2a4 4 0 11.001 8.001A4 4 0 0110 6z" />
+                  </svg>
+                  Search
+               </button>
+            </div>
+         </div>
+
+         <!-- main card -->
+         <div class="card" role="region" aria-live="polite">
+            <div class="main-left">
+               <div class="temp-row">
+                  <div>
+                     <div class="temp-val" id="tempVal">--°C</div>
+                     <div class="small" id="minmax">Min --° / Max --°</div>
+                  </div>
+
+                  <div style="min-width:220px">
+                     <div class="location" id="locationName">-</div>
+                     <div class="updated" id="updatedAt">Updated: -</div>
+                     <div class="desc" id="weatherDesc">-</div>
+                     <div class="small" id="localTime">Local time: -</div>
+                  </div>
+               </div>
+
+               <div class="stats" style="margin-top:12px">
+                  <div class="stat">
+                     <div class="label">💧 Humidity</div>
+                     <div id="humidity">--%</div>
+                  </div>
+                  <div class="stat">
+                     <div class="label">🔽 Pressure</div>
+                     <div id="pressure">-- hPa</div>
+                  </div>
+                  <div class="stat">
+                     <div class="label">🌬️ Wind</div>
+                     <div id="wind">-- m/s • --</div>
+                  </div>
+                  <div class="stat">
+                     <div class="label">🌡️ Feels like</div>
+                     <div id="feels">--°C</div>
+                  </div>
+               </div>
+            </div>
+
+            <aside class="main-right">
+               <div class="icon-wrap"><img id="weatherIcon" src="cloudsicon.png" alt="weather icon"></div>
+               <div class="sun-times" id="sunTimes">
+                  <div>Sunrise: <span id="sunrise">--:--</span></div>
+                  <div>Sunset: <span id="sunset">--:--</span></div>
+               </div>
+            </aside>
+         </div>
+         <div style="width:100%; text-align:center; margin-top:12px;">
+            <div style="font-weight:700; margin-bottom:8px;">5-day forecast</div>
+            <div class="forecast" id="forecast"></div>
+         </div>
+         <div id="errorBox" style="display:none" class="error"></div>
+         <footer class="tip">
+            Tip: For best results, use city name and country code (e.g., "Hyderabad,IN").
+         </footer>
+      </div>
+   </div>
+   <script src="main.js">
+   </script
+
+</body>
+
+</html>
